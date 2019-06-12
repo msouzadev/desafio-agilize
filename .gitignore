@@ -1,0 +1,35 @@
+/spa/backend/node_modules
+/spa/backend/public/storage
+/spa/backend/storage/*.key
+/spa/backend/vendor
+/spa/backend/.env
+/spa/backend/.phpunit.result.cache
+/spa/backend/Homestead.json
+/spa/backend/Homestead.yaml
+/spa/backend/npm-debug.log
+/spa/backend/yarn-error.log
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/spa/frontend/node_modules
+/spa/frontend/.pnp
+/spa/frontend/.pnp.js
+
+# testing
+/spa/frontend/coverage
+
+# productioncd
+/spa/frontend/build
+
+# misc
+/spa/frontend/.DS_Store
+/spa/frontend/.env.local
+/spa/frontend/.env.development.local
+/spa/frontend/.env.test.local
+/spa/frontend/.env.production.local
+
+/spa/frontend/npm-debug.log*
+/spa/frontend/yarn-debug.log*
+/spa/frontend/yarn-error.log*
