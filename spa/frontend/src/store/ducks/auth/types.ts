@@ -6,6 +6,10 @@ export enum AuthTypes {
 export interface Auth {
   token: string;
 }
+export interface AuthForm {
+  email: string;
+  password: string;
+}
 export interface AuthState {
   readonly data: object;
   readonly loading: boolean;

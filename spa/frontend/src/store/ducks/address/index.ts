@@ -24,6 +24,20 @@ const reducer: Reducer<AddressState> = (state = INITIAL_STATE, action) => {
         error: true,
         data: []
       };
+    case AddressTypes.FIND_ADDRESS:
+      return {
+        ...state,
+        loading: true,
+        error: false,
+        data: []
+      };
+    case AddressTypes.FIND_ADDRESS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        data: action.payload
+      };
     default:
       return state;
   }

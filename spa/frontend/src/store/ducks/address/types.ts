@@ -1,7 +1,9 @@
 export enum AddressTypes {
-  LOAD_REQUEST = "@auth/LOAD_REQUEST",
-  LOAD_SUCCESS = "@auth/LOAD_SUCCESS",
-  LOAD_FAILURE = "@auth/LOAD_FAILURE"
+  LOAD_REQUEST = "@address/LOAD_REQUEST",
+  LOAD_SUCCESS = "@address/LOAD_SUCCESS",
+  LOAD_FAILURE = "@address/LOAD_FAILURE",
+  FIND_ADDRESS = "@address/FIND_ADDRESS",
+  FIND_ADDRESS_SUCCESS = "@address/FIND_ADDRESS_SUCCESS"
 }
 
 export interface Address {

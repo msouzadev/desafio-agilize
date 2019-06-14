@@ -1,10 +1,10 @@
 import { action } from "typesafe-actions";
 
-import { AuthTypes } from "./types";
+import { AuthTypes, AuthForm } from "./types";
 
-export const loadRequest = () => action(AuthTypes.LOAD_REQUEST);
+export const makeAuth = (data: AuthForm) => action(AuthTypes.LOAD_REQUEST);
 
-export const loadSuccess = (data: any) =>
+export const authSuccess = (data: any) =>
   action(AuthTypes.LOAD_SUCCESS, { data });
 
-export const loadFailure = () => action(AuthTypes.LOAD_FAILURE);
+export const authFailure = () => action(AuthTypes.LOAD_FAILURE);

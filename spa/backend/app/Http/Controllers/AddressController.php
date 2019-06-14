@@ -32,11 +32,11 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        $address =  json_decode($this->addressRepo->getAddressDetails($request->postalcode), true);
+        $address =  json_decode($this->addressRepo->getAddressDetails($request->postalCode), true);
         if (!$address) {
             return response()->json(['error' => 'erro ao consultar cep'], 500);
         }
 
-        return $this->addressRepo->create($address);
+        return response()->json($this->addressRepo->create($address));
     }
 }
