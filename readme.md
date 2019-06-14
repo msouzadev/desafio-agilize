@@ -47,12 +47,26 @@ DB_PASSWORD=senha
 MIX_APP_URL="url da aplicação"
 ```
 
+## Instalar dependencias:
+
+`composer update`
+
 Após configurar ambiente, executar o comando abaixo para criar as tabelas no bando de dados
 
 `php artisan migrate`
 
 Executar o comando para criar o usuario para logar na aplicação
+
 `php artisan db:seed`
+
 Feito isso , basta apenas iniciar o servidor com o comando:
 
 `php artisan serve`
+
+Feito isso, basta inicializar a aplicação frontend que se encontra em spa/frontend
+
+### instalar dependencias
+
+`yarn` ou `npm i`
+
+Depois, `yarn start` ou `npm start`
