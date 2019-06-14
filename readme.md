@@ -5,5 +5,14 @@ Escolhi os desafios de criar um SPA e a função maxArray
 Para executar o maxArray, no seu terminal digite:
 
 ```bash
-pip maxArray.php
+php maxArray.php
 ```
+
+## SPA
+
+### Tecnologias utilizadas
+
+Backend:
+
+- Laravel
+- Mysql
