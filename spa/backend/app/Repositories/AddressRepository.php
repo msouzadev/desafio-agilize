@@ -30,7 +30,7 @@ class AddressRepository
 
     public function list()
     {
-        return Address::all();
+        return Address::orderBy('created_at', 'desc')->get();
     }
 
     public function getAddressDetails(string $postalcode)

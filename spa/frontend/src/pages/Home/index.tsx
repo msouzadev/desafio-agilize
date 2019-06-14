@@ -5,6 +5,7 @@ import { bindActionCreators, Dispatch } from "redux";
 import { ApplicationState } from "../../store";
 import * as AddressActions from "../../store/ducks/address/actions";
 import { AddressState } from "../../store/ducks/address/types";
+import api from "../../services/api";
 interface DispatchProps {
   findAddress(postalCode: string): void;
 }
@@ -17,19 +18,37 @@ interface OwnProps {
 type Props = DispatchProps & StateProps & OwnProps;
 class Home extends Component<Props> {
   componentDidMount() {
-    console.log(this.props);
+    if (!localStorage.getItem("token")) {
+      this.props.history.push("/");
+    }
   }
   state = {
     postalCode: ""
   };
   handleSearch = () => {
-    console.log("search");
-    const { findAddress } = this.props;
-    findAddress(this.state.postalCode);
+    const { history } = this.props;
+    const { postalCode } = this.state;
+    const token = localStorage.getItem("token");
+    api
+      .post(
+        "api/address",
+        { postalCode },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then(res => history.push("/home/list"))
+      .catch();
   };
 
   handleTextChange = (postalCode: string) => {
     this.setState({ postalCode });
+  };
+  handleLogout = () => {
+    localStorage.removeItem("token");
+    this.props.history.push("/");
   };
   render() {
     const { address, history } = this.props;
@@ -40,6 +59,7 @@ class Home extends Component<Props> {
           handleSearch={this.handleSearch}
           handleTextChange={this.handleTextChange}
           disabled={address.loading}
+          handleLogout={this.handleLogout}
         />
       </div>
     );
